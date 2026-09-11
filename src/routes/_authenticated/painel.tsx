@@ -85,10 +85,10 @@ function Kpi({
           <Icone className="size-5" />
         </div>
         <div className="min-w-0">
-          <p className="truncate text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          <p className="text-xs font-medium uppercase leading-tight tracking-wide text-muted-foreground">
             {titulo}
           </p>
-          <p className="truncate text-2xl font-bold tabular-nums">{valor}</p>
+          <p className="text-xl font-bold leading-tight tabular-nums sm:text-2xl">{valor}</p>
           {detalhe && <p className="truncate text-xs text-muted-foreground">{detalhe}</p>}
         </div>
       </CardContent>
