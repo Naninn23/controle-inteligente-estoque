@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Package, Search, Truck } from "lucide-react";
 
 import {
-  CommandDialog,
+  Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -12,6 +12,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
 import { navItems } from "@/lib/nav";
 import { useAuth } from "@/lib/auth";
@@ -85,7 +86,10 @@ export function BuscaGlobal() {
         <kbd className="ml-auto hidden rounded border px-1.5 text-[10px] sm:inline">Ctrl K</kbd>
       </Button>
 
-      <CommandDialog open={aberto} onOpenChange={setAberto}>
+      <Dialog open={aberto} onOpenChange={setAberto}>
+        <DialogContent className="overflow-hidden p-0">
+          <DialogTitle className="sr-only">Busca global</DialogTitle>
+          <Command shouldFilter={false}>
         <CommandInput
           placeholder="Buscar produtos, SKU, código de barras, fornecedores..."
           value={termo}
@@ -151,7 +155,9 @@ export function BuscaGlobal() {
             </CommandGroup>
           )}
         </CommandList>
-      </CommandDialog>
+          </Command>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
