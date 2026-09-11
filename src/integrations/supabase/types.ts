@@ -376,6 +376,7 @@ export type Database = {
         Row: {
           ativo: boolean
           categoria_id: string | null
+          codigo_barras: string | null
           created_at: string
           custo_medio: number
           descricao: string | null
@@ -383,6 +384,7 @@ export type Database = {
           estoque_min: number
           fornecedor_id: string | null
           id: string
+          localizacao: string | null
           nome: string
           preco_venda: number
           saldo: number
@@ -392,6 +394,7 @@ export type Database = {
         Insert: {
           ativo?: boolean
           categoria_id?: string | null
+          codigo_barras?: string | null
           created_at?: string
           custo_medio?: number
           descricao?: string | null
@@ -399,6 +402,7 @@ export type Database = {
           estoque_min?: number
           fornecedor_id?: string | null
           id?: string
+          localizacao?: string | null
           nome: string
           preco_venda?: number
           saldo?: number
@@ -408,6 +412,7 @@ export type Database = {
         Update: {
           ativo?: boolean
           categoria_id?: string | null
+          codigo_barras?: string | null
           created_at?: string
           custo_medio?: number
           descricao?: string | null
@@ -415,6 +420,7 @@ export type Database = {
           estoque_min?: number
           fornecedor_id?: string | null
           id?: string
+          localizacao?: string | null
           nome?: string
           preco_venda?: number
           saldo?: number

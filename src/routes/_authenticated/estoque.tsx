@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pagina, EmBreve } from "@/components/pagina";
+import { Pagina } from "@/components/pagina";
+import { TabelaProdutos } from "@/components/tabela-produtos";
 
 export const Route = createFileRoute("/_authenticated/estoque")({
   head: () => ({
@@ -11,8 +12,8 @@ export const Route = createFileRoute("/_authenticated/estoque")({
     ],
   }),
   component: () => (
-    <Pagina titulo="Posição de Estoque" descricao="Saldos atuais, custo médio e alertas de mínimo.">
-      <EmBreve texto="A tabela de posição de estoque será exibida aqui." />
+    <Pagina titulo="Posição de Estoque" descricao="Saldos atuais, valor imobilizado e alertas de mínimo.">
+      <TabelaProdutos modo="estoque" />
     </Pagina>
   ),
 });
