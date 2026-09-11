@@ -233,9 +233,7 @@ export function TabelaProdutos({ modo }: { modo: "produtos" | "estoque" }) {
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-1">
                         <Button variant="ghost" size="sm" asChild>
-                          <Link to="/movimentacoes" search={{ produto: p.id }}>
-                            Histórico
-                          </Link>
+                          <Link to="/movimentacoes">Histórico</Link>
                         </Button>
                         {podeGerenciar && (
                           <Button
