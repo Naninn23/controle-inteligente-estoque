@@ -68,6 +68,12 @@ export function BuscaGlobal() {
     navigate({ to: url });
   };
 
+  const irParaProduto = (sku: string) => {
+    setAberto(false);
+    setTermo("");
+    navigate({ to: "/estoque", search: { q: sku } });
+  };
+
   const telas = visiveis.filter((i) =>
     !busca ? true : i.titulo.toLowerCase().includes(busca.toLowerCase()),
   );
