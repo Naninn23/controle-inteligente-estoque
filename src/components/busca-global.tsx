@@ -116,7 +116,7 @@ export function BuscaGlobal() {
                 <CommandItem
                   key={p.id}
                   value={`produto-${p.id}`}
-                  onSelect={() => irPara("/estoque")}
+                  onSelect={() => irParaProduto(p.sku)}
                 >
                   <Package className="mr-2 size-4" />
                   <span className="truncate">{p.nome}</span>
