@@ -68,6 +68,12 @@ export function BuscaGlobal() {
     navigate({ to: url });
   };
 
+  const irParaProduto = (sku: string) => {
+    setAberto(false);
+    setTermo("");
+    navigate({ to: "/estoque", search: { q: sku } });
+  };
+
   const telas = visiveis.filter((i) =>
     !busca ? true : i.titulo.toLowerCase().includes(busca.toLowerCase()),
   );
@@ -110,7 +116,7 @@ export function BuscaGlobal() {
                 <CommandItem
                   key={p.id}
                   value={`produto-${p.id}`}
-                  onSelect={() => irPara("/estoque")}
+                  onSelect={() => irParaProduto(p.sku)}
                 >
                   <Package className="mr-2 size-4" />
                   <span className="truncate">{p.nome}</span>
