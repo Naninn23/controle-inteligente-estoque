@@ -46,10 +46,20 @@ export function useProdutos() {
 
 type Ordem = "nome" | "saldo" | "valor";
 
-export function TabelaProdutos({ modo }: { modo: "produtos" | "estoque" }) {
+export function TabelaProdutos({
+  modo,
+  buscaInicial = "",
+}: {
+  modo: "produtos" | "estoque";
+  buscaInicial?: string;
+}) {
   const { podeGerenciar } = useAuth();
   const { data: produtos = [], isLoading } = useProdutos();
-  const [busca, setBusca] = useState("");
+  const [busca, setBusca] = useState(buscaInicial);
+
+  useEffect(() => {
+    setBusca(buscaInicial);
+  }, [buscaInicial]);
   const [categoria, setCategoria] = useState("todas");
   const [status, setStatus] = useState("todos");
   const [ordem, setOrdem] = useState<Ordem>("nome");
