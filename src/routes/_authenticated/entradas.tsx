@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pagina, EmBreve } from "@/components/pagina";
+import { Pagina } from "@/components/pagina";
+import { Documentos } from "@/components/documentos";
 
 export const Route = createFileRoute("/_authenticated/entradas")({
   head: () => ({
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/_authenticated/entradas")({
   }),
   component: () => (
     <Pagina titulo="Entradas" descricao="Documentos de entrada multi-item com custo médio ponderado.">
-      <EmBreve texto="A lista e o cadastro de entradas serão exibidos aqui." />
+      <Documentos tipo="entrada" />
     </Pagina>
   ),
 });
