@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pagina, EmBreve } from "@/components/pagina";
+import { Pagina } from "@/components/pagina";
+import { Documentos } from "@/components/documentos";
 
 export const Route = createFileRoute("/_authenticated/saidas")({
   head: () => ({
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/_authenticated/saidas")({
   }),
   component: () => (
     <Pagina titulo="Saídas" descricao="Documentos de saída multi-item com bloqueio de estoque negativo.">
-      <EmBreve texto="A lista e o cadastro de saídas serão exibidos aqui." />
+      <Documentos tipo="saida" />
     </Pagina>
   ),
 });
