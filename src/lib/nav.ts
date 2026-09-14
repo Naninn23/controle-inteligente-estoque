@@ -9,6 +9,7 @@ import {
   Boxes,
   ClipboardList,
   BarChart3,
+  Bell,
   Users,
   Settings,
   ShieldCheck,
@@ -37,6 +38,7 @@ export const navItems: NavItem[] = [
   { titulo: "Fornecedores", url: "/fornecedores", icone: Truck, grupo: "Cadastros" },
 
   { titulo: "Relatórios", url: "/relatorios", icone: BarChart3, grupo: "Gestão" },
+  { titulo: "Alertas", url: "/alertas", icone: Bell, grupo: "Gestão" },
 
   { titulo: "Usuários", url: "/usuarios", icone: Users, grupo: "Administração", somenteAdmin: true },
   { titulo: "Configurações", url: "/configuracoes", icone: Settings, grupo: "Administração", somenteGestor: true },

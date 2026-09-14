@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowDownLeft, ArrowUpRight, Scale, Search } from "lucide-react";
 
@@ -7,6 +7,7 @@ import { Pagina } from "@/components/pagina";
 import { supabase } from "@/integrations/supabase/client";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,
@@ -68,6 +69,22 @@ function Movimentacoes() {
     <Pagina
       titulo="Movimentações"
       descricao="Histórico imutável com saldo anterior, saldo posterior e custo médio ponderado."
+      acoes={
+        <div className="flex gap-2">
+          <Button asChild variant="outline">
+            <Link to="/entradas">
+              <ArrowDownLeft className="mr-2 size-4" />
+              Nova entrada
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link to="/saidas">
+              <ArrowUpRight className="mr-2 size-4" />
+              Nova saída
+            </Link>
+          </Button>
+        </div>
+      }
     >
       <div className="flex flex-wrap gap-3">
         <div className="relative min-w-0 flex-1">
