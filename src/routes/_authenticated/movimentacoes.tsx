@@ -68,6 +68,22 @@ function Movimentacoes() {
     <Pagina
       titulo="Movimentações"
       descricao="Histórico imutável com saldo anterior, saldo posterior e custo médio ponderado."
+      acoes={
+        <div className="flex gap-2">
+          <Button asChild variant="outline">
+            <Link to="/entradas">
+              <ArrowDownLeft className="mr-2 size-4" />
+              Nova entrada
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link to="/saidas">
+              <ArrowUpRight className="mr-2 size-4" />
+              Nova saída
+            </Link>
+          </Button>
+        </div>
+      }
     >
       <div className="flex flex-wrap gap-3">
         <div className="relative min-w-0 flex-1">
