@@ -3,9 +3,8 @@ import { Pagina } from "@/components/pagina";
 import { TabelaProdutos } from "@/components/tabela-produtos";
 
 export const Route = createFileRoute("/_authenticated/estoque")({
-  validateSearch: (search: Record<string, unknown>): { q?: string } => ({
-    q: typeof search['q'] === "string" ? (search['q'] as string) : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { q?: string } =>
+    typeof search['q'] === "string" ? { q: search['q'] as string } : {},
   head: () => ({
     meta: [
       { title: "Posição de Estoque — Estoque Fácil" },
