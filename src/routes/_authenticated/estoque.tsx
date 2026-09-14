@@ -3,8 +3,8 @@ import { Pagina } from "@/components/pagina";
 import { TabelaProdutos } from "@/components/tabela-produtos";
 
 export const Route = createFileRoute("/_authenticated/estoque")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    q: typeof search['q'] === "string" ? (search['q'] as string) : "",
+  validateSearch: (search: Record<string, unknown>): { q?: string } => ({
+    q: typeof search['q'] === "string" ? (search['q'] as string) : undefined,
   }),
   head: () => ({
     meta: [
@@ -21,7 +21,7 @@ function PaginaEstoque() {
   const { q } = Route.useSearch();
   return (
     <Pagina titulo="Posição de Estoque" descricao="Saldos atuais, valor imobilizado e alertas de mínimo.">
-      <TabelaProdutos modo="estoque" buscaInicial={q} />
+      <TabelaProdutos modo="estoque" buscaInicial={q ?? ""} />
     </Pagina>
   );
 }
