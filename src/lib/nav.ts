@@ -9,6 +9,7 @@ import {
   Boxes,
   ClipboardList,
   BarChart3,
+  Bell,
   Users,
   Settings,
   ShieldCheck,
